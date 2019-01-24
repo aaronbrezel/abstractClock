@@ -9,15 +9,18 @@ function draw() {
 	rect(0,600,600,(second()*-1*10)); //Seconds are a blue rectangle moving up
 	fill(0,255,0); //set color to green	
 	rect(0,0,(minute()*10),600); //minutes are a green rectangle moving to the right
-	fill(0,0,255); //Set color to blue
+	
 	var oClock
 	//hour() provides military time. Value from 0-23, not 1-24
 	//Below if statement re-interperates hour() output to 1-24 and on a 12 hour timescale
+
 	if (hour()<=12) {
+		fill(255, 165,0) //set color to orange-yellow when in the AM
 		oClock = hour();
 
 	}
 	else {
+		fill(0,0,255); //Set color to blue when in the PM
 		oClock = hour()-12
 	}
 	
